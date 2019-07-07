@@ -4,12 +4,12 @@ public class Music {
 
     private String name;
     private String singer;
-    private Integer song;
+    private String data;
 
-    public Music(String name, String singer, Integer song) {
+    public Music(String name, String singer, String data) {
         this.name = name;
         this.singer = singer;
-        this.song = song;
+        this.data = data;
     }
 
     public String getName() {
@@ -28,11 +28,11 @@ public class Music {
         this.singer = singer;
     }
 
-    public Integer getSong() {
-        return song;
+    public String getData() {
+        return data;
     }
 
-    public void setSong(Integer song) {
-        this.song = song;
+    public void setData(String data) {
+        this.data = data;
     }
 }

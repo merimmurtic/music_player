@@ -2,6 +2,7 @@ package com.music.player;
 
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,7 +77,7 @@ public class CustomMusicAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 if(check){
-                    mediaPlayer = MediaPlayer.create(context, music.getSong());
+                    mediaPlayer = MediaPlayer.create(context, Uri.parse(music.getData()));
                     check = false;
                 }
                 if(mediaPlayer.isPlaying()){
