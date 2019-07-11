@@ -1,8 +1,10 @@
 package com.music.player;
 
 import android.content.Context;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -76,18 +78,10 @@ public class CustomMusicAdapter extends BaseAdapter {
         viewHolder.playMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(check){
-                    mediaPlayer = MediaPlayer.create(context, Uri.parse(music.getData()));
-                    check = false;
-                }
-                if(mediaPlayer.isPlaying()){
-                    mediaPlayer.pause();
-                    viewHolder.playMusic.setImageResource(R.drawable.play_button);
-                }else{
-                        mediaPlayer.start();
-                        viewHolder.playMusic.setImageResource(R.drawable.pause_button);
+                Intent intent = new Intent(context, SongDetails.class);
+                intent.putExtra("MUSIC", String.valueOf(music));
+                context.startActivity(intent);
 
-                }
             }
         });
 
