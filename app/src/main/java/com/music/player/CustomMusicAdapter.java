@@ -84,22 +84,13 @@ public class CustomMusicAdapter extends BaseAdapter {
                     mediaPlayer.pause();
                     viewHolder.playMusic.setImageResource(R.drawable.play_button);
                 }else{
-                    mediaPlayer.start();
-                    viewHolder.playMusic.setImageResource(R.drawable.pause_button);
+                        mediaPlayer.start();
+                        viewHolder.playMusic.setImageResource(R.drawable.pause_button);
+
                 }
             }
         });
-        viewHolder.stopMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(!check) {
-                    mediaPlayer.stop();
-                    mediaPlayer.release();
-                    check = true;
-                }
-                viewHolder.playMusic.setImageResource(R.drawable.play_button);
-            }
-        });
+
         return convertView;
     }
 }
