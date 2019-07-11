@@ -38,7 +38,7 @@
         app:srcCompat="@drawable/play_button" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/pauseMusic"
         android:layout_width="99dp"
         android:layout_height="96dp"
         android:layout_marginStart="8dp"

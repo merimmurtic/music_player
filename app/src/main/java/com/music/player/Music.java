@@ -1,6 +1,10 @@
 package com.music.player;
 
-public class Music {
+import android.media.MediaPlayer;
+
+import java.io.Serializable;
+
+public class Music implements Serializable {
 
     private String name;
     private String singer;

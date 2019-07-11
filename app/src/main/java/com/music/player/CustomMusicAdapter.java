@@ -3,8 +3,6 @@ package com.music.player;
 import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.net.Uri;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -78,8 +76,8 @@ public class CustomMusicAdapter extends BaseAdapter {
         viewHolder.playMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, SongDetails.class);
-                intent.putExtra("MUSIC", String.valueOf(music));
+                Intent intent = new Intent(context, SongDetailsActivity.class);
+                intent.putExtra("MUSIC", music);
                 context.startActivity(intent);
 
             }
