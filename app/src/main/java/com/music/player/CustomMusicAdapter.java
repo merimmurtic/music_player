@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -17,8 +18,6 @@ public class CustomMusicAdapter extends BaseAdapter {
     private Context context;
     private int layout;
     private ArrayList<Music> arrayList;
-    private MediaPlayer mediaPlayer;
-    private Boolean check = true;
 
     public CustomMusicAdapter(Context context, int layout, ArrayList<Music> arrayList) {
         this.context = context;
@@ -63,6 +62,15 @@ public class CustomMusicAdapter extends BaseAdapter {
 
             convertView.setTag(viewHolder);
 
+            convertView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Toast.makeText(v.getContext(), "Long click", Toast.LENGTH_SHORT).show();
+
+                    return true;
+                }
+            });
+
         }else {
 
             viewHolder = (ViewHolder) convertView.getTag();
@@ -82,6 +90,8 @@ public class CustomMusicAdapter extends BaseAdapter {
 
             }
         });
+
+
 
         return convertView;
     }
